@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solucionador de Ecuaciones y Graficador</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Solucionador de Ecuaciones</h1>
+
+        <div class="equation-section">
+            <h2>Ecuación Lineal: $ax + b = 0$</h2>
+            <div class="input-group">
+                <label for="linearA">Coeficiente 'a':</label>
+                <input type="number" id="linearA" value="1">
+            </div>
+            <div class="input-group">
+                <label for="linearB">Coeficiente 'b':</label>
+                <input type="number" id="linearB" value="-2">
+            </div>
+            <button onclick="solveLinear()">Calcular Lineal</button>
+            <div class="results">
+                <h3>Resultados Lineal:</h3>
+                <p><strong>Solución:</strong> <span id="linearSolution"></span></p>
+                <p><strong>Dominio:</strong> <span id="linearDomain">Todos los números reales ($-\infty, \infty$)</span></p>
+                <p><strong>Rango:</strong> <span id="linearRange">Todos los números reales ($-\infty, \infty$)</span></p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="equation-section">
+            <h2>Ecuación Cuadrática: $ax^2 + bx + c = 0$</h2>
+            <div class="input-group">
+                <label for="quadraticA">Coeficiente 'a':</label>
+                <input type="number" id="quadraticA" value="1">
+            </div>
+            <div class="input-group">
+                <label for="quadraticB">Coeficiente 'b':</label>
+                <input type="number" id="quadraticB" value="-3">
+            </div>
+            <div class="input-group">
+                <label for="quadraticC">Coeficiente 'c':</label>
+                <input type="number" id="quadraticC" value="2">
+            </div>
+            <button onclick="solveQuadratic()">Calcular Cuadrática</button>
+            <div class="results">
+                <h3>Resultados Cuadrática:</h3>
+                <p><strong>Soluciones (raíces):</strong> <span id="quadraticSolutions"></span></p>
+                <p><strong>Dominio:</strong> <span id="quadraticDomain">Todos los números reales ($-\infty, \infty$)</span></p>
+                <p><strong>Rango:</strong> <span id="quadraticRange"></span></p>
+                <p><strong>Vértice:</strong> (<span id="vertexX"></span>, <span id="vertexY"></span>)</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="graph-section">
+            <h2>Gráfica</h2>
+            <div id="calculator" style="width: 100%; height: 500px;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
